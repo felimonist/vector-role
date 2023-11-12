@@ -32,7 +32,7 @@ address = "0.0.0.0:8686"
 [sinks.clickhouse]
 type = "clickhouse"
 inputs = ["syslog"]
-endpoint = "http://localhost:8123"
-database = "logs"
-table = "logs"
+endpoint = "http://{{ clickhouse_host }}:{{ clickhouse_port }}"
+database = "{{ database }}"
+table = "{{ table }}"
 skip_unknown_fields = true
